@@ -141,7 +141,7 @@ export default function MainPage() {
       {/* IVF Cycles Section */}
       <div className="main-div">
         <h2 className="main-title">Number of IVF Cycles?</h2>
-        <div className="slider-container" style={{ width: "30%" }}>
+        <div className="slider-container" style={{ width: "100%" }}>
           <div
             className="slider-value"
             style={{

@@ -14,8 +14,6 @@
   text-align: center; /* Center align the text inside */
   box-sizing: border-box;
 }
-.arrowBefore {
-}
 .arrowAfter {
   display: none;
 }
@@ -188,7 +186,7 @@ input[type="checkbox"]:checked + label {
 /* Slider styles */
 .slider-container {
   position: relative;
-  width: 80%;
+  width: 100%;
   margin: 30px 0;
   text-align: center;
 }
@@ -341,6 +339,9 @@ input[type="checkbox"]:checked + label {
     font-size: 14px; /* Smaller font size for labels */
   }
 
+  .slider-container {
+    width: 100%; /* Full width on small screens */
+  }
   .slider-value {
     font-size: 10px; /* Smaller slider value font */
   }
