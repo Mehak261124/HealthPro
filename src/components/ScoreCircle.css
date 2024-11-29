@@ -1,0 +1,85 @@
+/* Container for the component */
+.score-circle-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 292px; /* Total size to match design */
+  height: 292px; /* Must match width for a perfect circle */
+  position: relative; /* For layering */
+}
+
+/* Outer Circle */
+.outer-circle {
+  position: relative;
+  width: 250px; /* Size for the progress circle */
+  height: 250px; /* Must match width for a perfect circle */
+  border-radius: 50%; /* Circular shape */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Inner Circle */
+.inner-circle {
+  width: 180px; /* Size of the inner dark circle */
+  height: 180px; /* Must match width */
+  background-color: #032706; /* Dark green */
+  border-radius: 50%; /* Circular shape */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow effect */
+  position: relative;
+  z-index: 1; /* Place it above the gradient */
+}
+
+/* Percentage Text */
+.percentage-text {
+  font-size: 75px; /* Matches the text size in design */
+  color: white; /* Contrast text */
+  text-align: center;
+  margin-left: 17px;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  .score-circle-container {
+    width: 200px; /* Adjust the container width for smaller screens */
+    height: 200px; /* Keep the circle proportional */
+  }
+
+  .outer-circle {
+    width: 180px; /* Decrease size of the outer circle */
+    height: 180px;
+  }
+
+  .inner-circle {
+    width: 140px; /* Smaller inner circle */
+    height: 140px;
+  }
+
+  .percentage-text {
+    font-size: 50px; /* Reduce font size for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .score-circle-container {
+    width: 150px; /* Further reduce size for very small screens */
+    height: 150px;
+  }
+
+  .outer-circle {
+    width: 130px; /* Outer circle size reduction */
+    height: 130px;
+  }
+
+  .inner-circle {
+    width: 100px; /* Even smaller inner circle */
+    height: 100px;
+  }
+
+  .percentage-text {
+    font-size: 35px; /* Smaller text for mobile devices */
+  }
+}

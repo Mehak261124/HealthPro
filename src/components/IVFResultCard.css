@@ -1,0 +1,256 @@
+body {
+  overflow: hidden; /* Ensure no unwanted scrollbars */
+}
+.ivf-card {
+  width: 100%;
+  height: 100vh;
+  padding-top: 30px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 120px;
+  background-color: #202020;
+  /* Removed overflow: hidden for normal view */
+}
+
+.arrowAfter {
+  display: none;
+}
+
+/* Breadcrumb */
+.breadcrumb1 {
+  width: 100%;
+  font-size: 16px;
+  color: white;
+  top: 40px;
+  left: 20px;
+  margin-left: 6%;
+}
+
+.breadcrumb-link {
+  color: white; 
+  text-decoration: none; 
+}
+
+/* Heading Style */
+.ivf-heading {
+  margin-left: 120px;
+  font-size: 36px;
+  color: white;
+  padding: 0 10px;
+  margin-top: 0;
+}
+
+/* Result container to hold chart and image */
+.result-container {
+  height: 500px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;        /* Allow wrapping for small screens */
+}
+
+/* Chart area */
+.chart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  margin-left: 70px; 
+  margin-bottom: 100px;
+  margin-top: 0;
+}
+
+.chart p {
+  margin-top: 10px;    
+  font-size: 20px;   
+  color: white;  
+  text-align: center;   
+}
+
+/* Image container */
+.image-container {
+  width: 55%;
+  position: relative;
+}
+
+.gradient-bg {  
+  position: absolute;        /* Positioned absolutely within the container */
+  width: 560px;                  /* Increased the size of the ellipse */
+  height: 560px;                 /* Make it larger for a more noticeable shadow */
+  background: radial-gradient(
+    circle, 
+    rgba(49, 135, 49, 0.5),    /* Slightly darker green for better visibility */
+    rgba(0, 0, 0, 0)             /* Fade to transparent */
+  ); 
+  filter: blur(100px);           /* Increase blur for a softer shadow effect */            
+  top: 28%;                  /* Align with the center of the container */
+  left: 70%;                
+  transform: translate(-50%, -50%); /* Center the gradient perfectly */
+}
+
+/* Image */
+.image-container img {
+  width: 70vw;
+  position: relative;
+  bottom: 170px;
+  height: 70vh;
+  border-radius: 10px;
+  z-index:1;
+}
+
+
+/* Media Queries */
+
+@media screen and (max-width: 768px) {
+
+  .body{
+    overflow: hidden;
+  }
+
+  .result-container {
+    display: flex;
+    gap: 140px;
+  }
+
+  .ivf-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /* align-items: center; */
+    gap: 20px;
+    padding-top: 0;
+    height: 94vh;
+  }
+
+  /* Adjust Heading */
+  .ivf-heading {
+    font-size: 28px;
+    width: 100%;
+  }
+
+  /* Chart Adjustments */
+  .chart {
+    width: 80%; /* Adjust width to be smaller on mobile */
+    text-align: center;
+  }
+
+  .chart p {
+    font-size: 18px;
+    margin-right: 0; /* Adjust text spacing */
+    text-align: center;
+  }
+
+  /* Image Container */
+  .image-container {
+    width: 90%; /* Ensure it fits well on mobile */
+    /* position: relative; */
+    margin-top: 20px;
+  }
+
+  .image-container img {
+    width: 100%; /* Ensure image fills the container */
+    height: auto;
+    border-radius: 10px;
+    z-index: 1;
+    bottom: 200px;
+  }
+
+  /* Gradient Background */
+  .gradient-bg {
+    position: absolute;
+    top: 40;
+    width: 100%; /* Scale gradient to fill the container */
+    height: 150px;
+    background: radial-gradient(circle, rgba(49, 135, 49, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
+    filter: blur(10px);
+    
+  }
+
+  /* Breadcrumb */
+  .breadcrumb1 {
+    font-size: 14px;
+    margin-left: 5%;
+  }
+}
+
+/* Mobile View (max-width: 480px) */
+/* Mobile View (max-width: 480px) */
+@media screen and (max-width: 480px) {
+  /* IVF Card Container - Stack elements vertically and center them */
+  .ivf-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center vertically */
+    align-items: center;     /* Center horizontally */
+    overflow:hidden;       /* Enable scrolling if needed */
+    height: 100vh;           /* Ensure the container fills the screen height */
+    padding: 10px;           /* Add padding for spacing */
+  }
+
+  .arrowBefore {
+    display: none;
+  }
+  .arrowAfter {
+    display: inline;
+  }
+
+  /* Adjust Heading */
+  .ivf-heading {
+    width: 100%;
+    font-size: 24px;
+    padding: 0 5px;           /* Reduce padding for small screens */
+  }
+
+  /* Chart Adjustments */
+  .chart {
+    width: 90%;               /* Limit the width of the chart */
+    margin-top: 20px;         /* Add some space between chart and heading */
+    text-align: center;       /* Ensure chart text stays centered */
+  }
+
+  .chart p {
+    font-size: 16px;          /* Smaller font size */
+    margin-right: 0;          /* Remove margin for proper alignment */
+    text-align: center;       /* Center the chart text */
+  }
+
+  /* Image Container */
+  .image-container {
+    width: 100%;              /* Full width for the image container */
+    margin-top: 20px;         /* Space between the image and previous content */
+    text-align: center;       /* Ensure image is centered */
+    position: relative;       /* Allow positioning for gradient background */
+  }
+
+  .image-container img {
+    width: 100%;              /* Full width image */
+    height: auto;             /* Maintain aspect ratio */
+    border-radius: 10px;      /* Rounded corners */
+  }
+
+  /* Gradient Background */
+  .gradient-bg {
+    width: 250px;             /* Fixed size for gradient background */
+    height: 250px;            /* Same as width to keep it circular */
+    position: absolute;       /* Position the gradient background absolutely */
+    top: 40%;                 /* Position it towards the center of the image */
+    left: 50%;                /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+    background: radial-gradient(circle, rgba(49, 135, 49, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
+    filter: blur(10px);       /* Add blur effect */
+    z-index: -1;              /* Ensure it stays behind the image */
+  }
+
+  /* Footer Button Adjustments */
+  .footer-tag {
+    font-size: 14px;           /* Smaller font size for footer */
+    text-align: center;        /* Ensure footer text stays centered */
+    margin-top: 20px;          /* Add space above the footer */
+  }
+}
+
+
+
+

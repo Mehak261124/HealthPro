@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: white;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.navbar {
+  flex-shrink: 0; /* Ensure navbar doesn't shrink */
+}
+
+.main-container {
+  flex-grow: 1; /* Allow the main content to grow and fill the page */
+}

@@ -1,0 +1,363 @@
+/* components/MainPage.css */
+
+/* Existing styles */
+.main-container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 80px); /* Full height minus the Navbar height */
+  padding: 20px;
+  background-color: #fcfaf5;
+  font-family: Arial, sans-serif;
+  text-align: center; /* Center align the text inside */
+  box-sizing: border-box;
+}
+.arrowBefore {
+}
+.arrowAfter {
+  display: none;
+}
+
+.breadcrumb {
+  width: 100%;
+  font-size: 16px;
+  color: black;
+  top: 40px;
+  left: 20px;
+  margin-left: 6%;
+}
+
+.breadcrumb-active {
+  color: #333;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.selected {
+  font-weight: bold;
+  color: #f48265; /* You can change this color to whatever you like */
+}
+
+.main-title {
+  width: inherit;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 20px 0 10px;
+}
+
+span {
+  font-size: 18px;
+  margin-right: 20px;
+}
+
+/* Radio button styles */
+.radio-group {
+  display: grid;
+  width: inherit;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 10px; /* Space between items */
+  margin: 20px 0;
+}
+
+.radio-group1 {
+  display: flex;
+  justify-content: space-between; /* Space between each radio button group */
+  align-items: center;
+  gap: 20px; /* Adjust space between the two sections (ICSI and PGT) */
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.radio-group1 div {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between label and radio button */
+}
+
+.radio-group1 label {
+  font-size: 18px; /* Font size of labels */
+  color: #333;
+  display: flex;
+  align-items: center; /* Align the text and radio buttons */
+  gap: 8px;
+}
+
+input[type="radio"] {
+  margin-right: 5px;
+  appearance: none; /* Remove default styling */
+  width: 20px; /* Outer circle size */
+  height: 20px; /* Outer circle size */
+  border-radius: 50%; /* Outer circle is round */
+  border: 2px solid #f48265; /* Initial border */
+  background-color: white; /* Initial white background */
+  cursor: pointer; /* Pointer cursor */
+  position: relative; /* Position relative to add the inner circle */
+  transition: all 0.2s ease;
+}
+
+input[type="radio"]:not(:checked) {
+  border-color: #f48265; /* Orange border color when unchecked */
+}
+
+input[type="radio"]:checked {
+  background-color: transparent; /* Transparent background to show inner circle */
+  border-color: #f48265;
+}
+
+input[type="radio"]:checked::before {
+  content: ""; /* No text, just the circle */
+  position: absolute;
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Center the circle */
+  width: 12px; /* Inner circle size */
+  height: 12px; /* Inner circle size */
+  background-color: #f48265; /* Inner circle color */
+  border-radius: 50%; /* Make it round */
+  transition: background-color 0.2s ease; /* Smooth transition for color changes */
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #333;
+  cursor: pointer;
+  font-size: 18px; /* Reduced font size */
+}
+
+input[type="radio"]:checked + label {
+  font-weight: bold; /* Make text bold when radio is selected */
+  color: #f48265; /* Change color to the same as the radio button when selected */
+}
+
+/* Checkbox styles */
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+input[type="checkbox"] {
+  border: 2px solid #f48265; /* Orange border color */
+  background-color: white;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #f48265; /* Orange background when checked */
+  border-color: #f48265; /* Same orange border when checked */
+}
+
+input[type="checkbox"]:checked::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  clip-path: polygon(10% 35%, 35% 70%, 90% 10%, 80% 0%, 35% 45%);
+  transition: all 0.2s ease;
+}
+
+input[type="checkbox"]:checked + label {
+  font-weight: bold; /* Make text bold when checkbox is checked */
+  color: #f48265; /* Change color to the same as the checkbox when checked */
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center; /* Align the label and checkbox horizontally */
+  font-size: 18px;
+  color: #333;
+  gap: 15px;
+}
+
+/* Slider styles */
+.slider-container {
+  position: relative;
+  width: 80%;
+  margin: 30px 0;
+  text-align: center;
+}
+
+.slider-value {
+  position: absolute;
+  top: -30px;
+  left: 50%; /* Center it horizontally */
+  transform: translateX(-50%);
+  background-color: #e57e69;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  transition: left 0.2s ease-in-out;
+}
+
+.range-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: 5px;
+  outline: none;
+  transition: background-color 0.3s ease;
+}
+
+.range-slider::-webkit-slider-runnable-track {
+  height: 8px;
+  border-radius: 5px;
+}
+
+.range-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: #e57e69;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+  margin-top: -6px;
+}
+
+.range-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background-color: #e57e69;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.range-slider::-ms-thumb {
+  width: 20px;
+  height: 20px;
+  background-color: #e57e69;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: -6px;
+}
+
+.calculate-button {
+  background-color: #d75555;
+  width: 8%;
+  height: 32px;
+  color: white;
+  border: 0;
+  border-radius: 5px;
+  margin-top: 30px;
+  font-size: 15px;
+}
+
+/* Add media queries for responsiveness */
+@media screen and (max-width: 768px) {
+  /* Main container adjustments */
+  .main-container {
+    text-align: left;
+    padding: 30px;
+    align-items: flex-start;
+  }
+  .radioTitle{
+    width: 130px;
+  }
+
+  .radioDiv{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 40px 0 0;
+  }
+
+  /* Breadcrumb adjustments */
+  .breadcrumb {
+    font-size: 14px;
+    margin-left: 0;
+    white-space: nowrap; /* Prevent wrapping */
+  }
+
+
+  /* Adjust radio group to stack vertically on smaller screens */
+  .radio-group {
+    grid-template-columns: 1fr; /* Stack radio buttons vertically */
+  }
+
+  .radio-group1 {
+    flex-direction: column; /* Stack the groups vertically */
+  }
+
+  /* Adjust slider container width */
+  .slider-container {
+    width: 100%; /* Full width on small screens */
+  }
+
+  /* Make the calculate button more prominent and span the width */
+  .calculate-button {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 18px;
+  }
+
+  .checkbox-group {
+    flex-direction: column; /* Stack checkboxes vertically */
+    width: inherit;
+  }
+
+  .checkbox-group label {
+    font-size: 16px; /* Adjust font size for mobile */
+  }
+
+  .slider-value {
+    font-size: 12px; /* Adjust tooltip font size for mobile */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* For very small screens (like mobile phones) */
+  .main-title {
+    font-size: 20px; /* Reduce title font size */
+  }
+
+  .breadcrumb {
+    font-size: 12px; /* Smaller breadcrumb font */
+  }
+
+  .radio-group1 label,
+  .checkbox-group label {
+    font-size: 14px; /* Smaller font size for labels */
+  }
+
+  .slider-value {
+    font-size: 10px; /* Smaller slider value font */
+  }
+
+  .arrowBefore {
+    display: none;
+  }
+  .arrowAfter {
+    display: inline;
+  }
+  .calculate-button {
+    background-color: #d75555;
+    width: 20%;
+    height: 32px;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    font-size: 15px;
+  }
+}
