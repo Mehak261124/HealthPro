@@ -1,35 +1,22 @@
-/* components/Navbar.css */
-.navbar {
+.header-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   padding: 20px;
-  background-color: #f8f8f8;
-  border: 1px solid grey;
-  position: relative;
 }
 
-.navbar-left {
+.nav-links {
   display: flex;
+  gap: 32px;
   align-items: center;
-  margin-left: 90px;
 }
 
-#logo {
-  height: 40px;
+.arrow {
+  display: inline-block;
+  margin-left: 8px;
 }
-
-.navbar-links {
-  display: flex;
-  gap: 20px;
-  list-style: none;
-  transition: all 0.3s ease; /* Smooth transition for opening/closing menu */
-}
-
-.navbar-links li {
-  font-size: 14px;
-  color: #333;
-  cursor: pointer;
+.hamburger {
+  display: none;
 }
 
 .talk-button {
@@ -43,97 +30,38 @@
   margin-right: 10px;
 }
 
-/* Hamburger Icon for Mobile */
-.hamburger {
-  display: none;
-  cursor: pointer;
-  font-size: 30px;
-  color: #333;
-  padding: 10px;
-}
-
-/* Add media queries for responsiveness */
-@media screen and (max-width: 768px) {
-  .navbar {
-    display: flex;
-    justify-content: space-between; /* Space out logo and hamburger */
-    align-items: center; /* Center items vertically */
-    padding: 10px;
-    position: relative;
-  }
-
-  .navbar-left {
-    margin-left: 0; /* Remove left margin */
-  }
-
-  .navbar-links {
-    display: flex;
-    flex-direction: column; /* Stack nav items vertically */
-    gap: 10px;
-    padding-left: 20px; /* Add indentation */
-    margin-top: 10px;
-    display: none; /* Hide links by default */
-  }
-
-  .navbar-links.open {
-    display: flex; /* Show links when hamburger is clicked */
-  }
-
-  .navbar-links li {
-    font-size: 16px; /* Adjust font size for smaller screens */
-  }
-
-  /* Mobile view talk-button */
-  .talk-button {
-    width: 100%; /* Make the button span the full width of the screen */
-    padding: 12px 0; /* Adjust padding for better spacing */
-    margin-top: 20px; /* Space it below the navbar */
+@media (max-width: 600px) {
+  .nav-links {
     display: none;
-    text-align: center; /* Center the button text */
-    background-color: #5BD489; /* Color for the button */
-    color: white; /* Text color */
-    font-size: 18px; /* Font size for mobile */
-    border: none; /* Remove any borders */
-    cursor: pointer; /* Make it look clickable */
-    z-index: 1; /* Ensure it's on top */
   }
-
-  /* Show hamburger icon on mobile */
   .hamburger {
-    display: block; /* Ensure hamburger is shown on mobile */
-    position: absolute;
-    right: 20px; /* Position it on the right */
-    top: 50%; /* Center it vertically */
-    transform: translateY(-50%); /* Perfect centering */
-    z-index: 2; /* Keep it above other elements */
-  }
-
-  /* Make sure logo and hamburger are aligned properly */
-  .navbar-left {
-    flex-grow: 1;
     display: flex;
-    justify-content: flex-start;
   }
-
-  .navbar-links {
-    flex-grow: 2;
+  .header-container {
+    display: flex;
+    justify-content: space-between;
   }
-}
-
-
-
-/* For very small screens (mobile phones) */
-@media screen and (max-width: 480px) {
-  .logo-text {
-    font-size: 20px; /* Reduce logo text size */
+  .ham-nav-links {
+    height: 250px;
+    width: 400px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 3px;
   }
-
-  .navbar-links li {
-    font-size: 14px; /* Further reduce font size for mobile screens */
+  .ham-nav-links {
+    font-size: 1.2em;
   }
-
   .talk-button {
-    font-size: 16px; /* Adjust button font size */
+    background-color: #D75555;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-right: 10px;
   }
 }
-

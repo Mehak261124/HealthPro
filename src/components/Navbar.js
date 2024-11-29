@@ -1,37 +1,44 @@
-// components/Navbar.js
-import React, { useState } from "react";
-import logo from '../assests/logo.png';
+import logo from "../assests/logo.png";
 import "./Navbar.css";
+import Hamburger from "hamburger-react";
+import { useState } from "react";
 
-export default function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false); // State to toggle menu
-
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
-
+function Header() {
+  const [isOpen, setOpen] = useState(false);
   return (
-    <header className="navbar">
-      <div className="navbar-left">
-        <img id="logo" src={logo} alt="logo" />
+    <>
+      <div className="header-container">
+        <div>
+          <img src={logo} alt="IVF Pulse Logo" />
+        </div>
+        <div className="nav-links">
+          <div>Donor Programme</div>
+          <div>Fertility Preservation</div>
+          <div>Advanced Treatments</div>
+          <div>Infertility Treatments</div>
+          <div>IVF Testing</div>
+          <div>About Us</div>
+          <button className="talk-button">
+            Talk to Us <span className="arrow">→</span>
+          </button>
+        </div>
+        <div className="hamburger">
+          <Hamburger toggled={isOpen} toggle={setOpen} />
+        </div>
       </div>
-
-      {/* Hamburger Icon */}
-      <div className="hamburger" onClick={toggleMenu}>
-        &#9776; {/* Unicode character for hamburger icon */}
-      </div>
-
-      {/* Navbar Links */}
-      <ul className={`navbar-links ${menuOpen ? "open" : ""}`}>
-        <li>Donor Programme</li>
-        <li>Fertility Preservation</li>
-        <li>Advanced Treatments</li>
-        <li>Infertility Treatments</li>
-        <li>IVF Testing</li>
-        <li>About Us</li>
-      </ul>
-
-      <button className="talk-button">Talk to Us →</button>
-    </header>
+      {isOpen && (
+        <div className="ham-nav-links">
+          <div>Donor Programme</div>
+          <div>Fertility Preservation</div>
+          <div>Advanced Treatments</div>
+          <div>Infertility Treatments</div>
+          <div>IVF Testing</div>
+          <div>About Us</div>
+          <button className="talk-button">Talk to Us</button>
+        </div>
+      )}
+    </>
   );
 }
+
+export default Header;
